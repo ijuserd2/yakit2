@@ -27,14 +27,19 @@ def indexHtml():
             else:
                 iller = request.form.get("iller")
                 ilkodu = str(iller)
-                soup = BeautifulSoup(r.text, "html.parser")
-                fuel = soup.find('tr', {'data-disctrict-id': ilkodu})
-                fuelprice = fuel.find_all('span', {'class': 'with-tax'})
-                data[0] = fuelprice[0].text
-                data[1] = fuelprice[1].text
-                data[2] = fuelprice[2].text
-                data[3] = fuelprice[3].text
-                return render_template('index.html', data = data, text=ilkodu)
+                if ilkodu == "":
+                    text = "Tekrar deneyin."
+                    return render_template('index.html', data = data, text=text)
+                else:
+                    soup = BeautifulSoup(r.text, "html.parser")
+                    fuel = soup.find('tr', {'data-disctrict-id': ilkodu})
+                    fuelprice = fuel.find_all('span', {'class': 'with-tax'})
+                    data[0] = fuelprice[0].text
+                    data[1] = fuelprice[1].text
+                    data[2] = fuelprice[2].text
+                    data[3] = fuelprice[3].text
+                    return render_template('index.html', data = data, text=ilkodu)
+                
             
 if __name__ == "__main__":
     app.run(debug=True)
