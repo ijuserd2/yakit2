@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="/static/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+    <body>
+        <div id="wrapper" class="wrapperclass">
+            <div id="inwrapper">
+                <div id="header">
+                    <div id="headertext">
+                        <h2>Yakıt Fiyatları</h2>
+                    </div>
+                </div>
+                <div style="color:rgba(255,255,255,0.9);">
+                        <span>{{ text }}</span>
+                </div>
+                <div id="center">
+                    <div id="il">
+                        <div id="ilpart">
+                             <form method="POST">
+                                <div id="formflex">
+                                    <div id="col1">
+                                        <div id="ilyazi">
+                                            <label for="ilsec">İl seçiniz</label>
+                                        </div>
+                                        <div id="illiste">
+                                            <select name="iller" id="ilsec">
+                                                <option value="" selected>Seçiniz...</option>
+                                                <option value="03400">İstanbul (Anadolu)</option>
+                                                <option value="03431">İstanbul (Avrupa)</option>
+                                                <option value="00600">Ankara</option>
+                                                <option value="00700">Antalya</option>
+                                                <option value="03500">İzmir</option>
+                                                <option value="04100">Kocaeli</option>
+                                                <option value="01600">Bursa</option>
+                                                <option value="00100">Adana</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="ilseciniz" value="1"/>
+                                    <div id="col2">
+                                        <div id="ilgonder">
+                                            <button id="gonder" type="submit"><i class="fa-solid fa-arrow-down"></i></button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                        </form>
+
+                        </div>
+                    </div>
+                    <div id="fiyatbolumu">
+                        <div id="fiyatlar">
+                            <div id="" class="fiyatclass">
+                                <div class="kirmiziyazi">
+                                    <span>V/Max</span>
+                                </div>
+                                <div class="siyahyazi">
+                                    <span>Kurşunsuz 95</span>
+                                </div>
+                                <div>
+                                    <div class="underline"></div>
+                                </div>
+                                <div class="price">
+                                    <span>{{ data[0] }}</span>
+                                </div>
+                            </div>
+                            <div id="" class="fiyatclass">
+                                <div class="kirmiziyazi">
+                                    <span>V/Max</span>
+                                </div>
+                                <div class="siyahyazi">
+                                    <span>Diesel</span>
+                                </div>
+                                <div>
+                                    <div class="underline"></div>
+                                </div>
+                                <div class="price">
+                                    <span>{{ data[1] }}</span>
+                                </div>
+                            </div>
+                            <div id="" class="fiyatclass">
+                                <div class="kirmiziyazi">
+                                    <span>V/Pro</span>
+                                </div>
+                                <div class="siyahyazi">
+                                    <span>Diesel</span>
+                                </div>
+                                <div>
+                                    <div class="underline"></div>
+                                </div>
+                                <div class="price">
+                                    <span>{{ data[2] }}</span>
+                                </div>
+                            </div>
+                            <div id="" class="fiyatclass">
+                                <div class="kirmiziyazi">
+                                    <span>PO/gaz</span>
+                                </div>
+                                <div class="siyahyazi">
+                                    <span>Otogaz</span>
+                                </div>
+                                <div>
+                                    <div class="underline"></div>
+                                </div>
+                                <div class="price">
+                                    <span>{{ data[3] }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer">
+                    <div id="footertext">
+                        <span>13.03.2024 tarihi itibariyle İstanbul - KADIKOY için tavsiye pompa litre fiyatlarıdır.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
